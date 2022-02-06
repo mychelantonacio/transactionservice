@@ -56,7 +56,7 @@ public class TransactionControllerTest {
     }
 
     @Test
-    public void listAllTransactions() throws Exception {
+    void listAllTransactions() throws Exception {
 
         when(transactionService.findAll(params)).thenReturn(initialTransactions);
 
@@ -70,7 +70,7 @@ public class TransactionControllerTest {
     }
 
     @Test
-    public void listAllTransactionsFilterByCurrency() throws Exception {
+    void listAllTransactionsFilterByCurrency() throws Exception {
 
         params.put("currency", "GBP");
         when(transactionService.findAll(params)).thenReturn(Arrays.asList(initialTransactions.get(0)));
@@ -87,7 +87,7 @@ public class TransactionControllerTest {
     }
 
     @Test
-    public void listAllTransactionsFilterByStatus() throws Exception {
+    void listAllTransactionsFilterByStatus() throws Exception {
 
         params.put("status", "CREATED");
         when(transactionService.findAll(params)).thenReturn(Arrays.asList(initialTransactions.get(0),initialTransactions.get(3)));
