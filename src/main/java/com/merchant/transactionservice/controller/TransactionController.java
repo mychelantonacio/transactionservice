@@ -27,8 +27,7 @@ public class TransactionController {
     @GetMapping
     public List<TransactionDTO> findAll(@RequestParam Map<String, String> params) {
         List<Transaction> transactions = transactionService.findAll(params);
-        List<TransactionDTO> transactionDtos = transactions.stream().map(transactionMapper::toDto).collect(Collectors.toList());
-        return transactionDtos;
+        return transactions.stream().map(transactionMapper::toDto).collect(Collectors.toList());
     }
 
     @GetMapping(path = "/{uuid}")
